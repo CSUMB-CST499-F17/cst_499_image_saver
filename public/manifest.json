@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+    
+    "name": "Panafold Image Saver",
+    "description": "Allows the user to save images that are on the page",
+    "version": "1.0",
+        "content_scripts" : [
+    {
+    "js": ["content.js"],
+    "matches": ["http://*.example.com/*"]
+    }],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "index.html"
+    }
+}
