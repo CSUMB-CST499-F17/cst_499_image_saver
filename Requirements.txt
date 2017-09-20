@@ -1,0 +1,2 @@
+npm install react
+npm install react-dom
