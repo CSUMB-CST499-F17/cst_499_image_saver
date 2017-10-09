@@ -1,0 +1,12 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: black;
+}
+
+#root {
+	width: 600px;
+	height: 600px;
+	padding: 0;
+	margin: 0;
+}
