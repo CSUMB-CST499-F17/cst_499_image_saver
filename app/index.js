@@ -7,6 +7,7 @@ import {green500} from 'material-ui/styles/colors';
 
 
 import Home from './components/Home';
+import Router from './components/Router';
 import GridListExampleComplex from './components/GridListExampleComplex';
 import './index.css';
 
@@ -26,8 +27,7 @@ const muiTheme = getMuiTheme({
 const App = () => {
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
-            <Home/>
-            <GridListExampleComplex/>
+            <Router/>
         </MuiThemeProvider>
     )
 }
