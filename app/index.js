@@ -31,6 +31,7 @@ const App = () => {
         </MuiThemeProvider>
     )
 }
+console.log("hello react!!!!!")
 
 ReactDOM.render(
   <App/>,

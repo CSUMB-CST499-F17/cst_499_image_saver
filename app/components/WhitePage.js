@@ -5,13 +5,15 @@ import FlatButton from 'material-ui/FlatButton';
 
 const WhitePage = (props) => {
 	const style = {
-		width: "100%", 
+		width: "100%",
+		maxWidth: "800px", 
 		height: "100%", 
-		padding: "16px",
+		margin: "16px",
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
-		backgroundColor: "white"
+		backgroundColor: "white",
+		// boxSizing: "border-box"
 	}
 	
 	return (
