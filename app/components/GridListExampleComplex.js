@@ -18,7 +18,8 @@ const styles = {
 
 const tilesData = [
   {
-    img: 'https://i.redd.it/chrpxfwuhrqz.jpg',
+    //img: resultImgs[0].getAttribute('src'),
+    img: 'https://i.redd.it/d3zti26pnmqz.jpg',
     featured: true,
   },
   {
@@ -52,8 +53,8 @@ const tilesData = [
 const GridListExampleComplex = () => (
   <div style={styles.root}>
     <GridList
-      cols={4}
-      cellHeight={100}
+      cols={2}
+      cellHeight={200}
       padding={5}
       style={styles.gridList}
     >

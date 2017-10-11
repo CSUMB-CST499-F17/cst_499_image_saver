@@ -18,16 +18,17 @@ const muiTheme = getMuiTheme({
     primary: green500,
   },
   appBar: {
-    height: 150,
-    backgroundColor: green500
+    height:50,
+    //backgroundColor: green500,
+    position: 'fixed'
   },
 });
 
 const App = () => {
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
-            <Home/>
-            <GridListExampleComplex/>
+            <h1><Home/></h1>
+            <h2><GridListExampleComplex/></h2>
         </MuiThemeProvider>
     )
 }
