@@ -18,7 +18,7 @@ const styles = {
 
 const tilesData = [
   {
-    //img: resultImgs[0].getAttribute('src'),
+    //img: resultImgs[0],
     img: 'https://i.redd.it/d3zti26pnmqz.jpg',
     featured: true,
   },

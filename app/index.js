@@ -10,7 +10,7 @@ import Home from './components/Home';
 import GridListExampleComplex from './components/GridListExampleComplex';
 import './index.css';
 
-const muiTheme = getMuiTheme({
+const muiTheme = getMuiTheme({//Not really sure that I'm changing anything here
     appBar:{
         backgroundColor: green500,
     },
@@ -24,7 +24,10 @@ const muiTheme = getMuiTheme({
   },
 });
 
-const App = () => {
+
+
+const App = () => {//Change me so that not all of the components are being called at once all the time
+console.log("Testing a print from inside of the return in index.")
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
             <h1><Home/></h1>

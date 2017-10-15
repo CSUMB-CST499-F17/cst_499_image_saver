@@ -3732,7 +3732,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var muiTheme = (0, _getMuiTheme3.default)(_defineProperty({
+var muiTheme = (0, _getMuiTheme3.default)(_defineProperty({ //Not really sure that I'm changing anything here
     appBar: {
         backgroundColor: _colors.green500
     },
@@ -3746,6 +3746,8 @@ var muiTheme = (0, _getMuiTheme3.default)(_defineProperty({
 }));
 
 var App = function App() {
+    //Change me so that not all of the components are being called at once all the time
+    console.log("Testing a print from inside of the return in index.");
     return _react2.default.createElement(
         _MuiThemeProvider2.default,
         { muiTheme: muiTheme },
@@ -33053,7 +33055,7 @@ var styles = {
 };
 
 var tilesData = [{
-  //img: resultImgs[0].getAttribute('src'),
+  //img: resultImgs[0],
   img: 'https://i.redd.it/d3zti26pnmqz.jpg',
   featured: true
 }, {
