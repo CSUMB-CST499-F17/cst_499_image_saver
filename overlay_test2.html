@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var login = document.getElementById('myModal');
+            
+            var btn = document.getElementById('button');
+            
+            var a = document.getElementsByClassName("cancel")[0];
+            
+            btn.onclick = function() {
+            login.style.display = "block";
+            }
+        
+            a.onclick = function() {
+            login.style.display = "none";
+            }
+            
+            // when the user clicks anywhere outside the modal it will close the window. (Note: does not work yet)
+            window.onclick = function(event) {
+            if (event.target == login) {
+            login.style.display = "none";
+        }
+    }
+        
+        
+        
+        
+            
+        </script>
+        <title> </title>
+        <link rel = "stylesheet" href = "popup1.css" type = "text/css"/>
+    </head>
+    <body>
+        <div id = "myModal" class = "modal">
+        <div align = "center"> 
+                <br><br><br><br>
+                <a href = "#loginScreen" class = "button">Click here to Log In</a>
+        </div>
+        
+        <div id = "loginScreen">
+            
+            <a href = "#" class = "cancel">&times;</a>
+        </div>
+        <div id = "cover">
+            
+        </div>
+        </div>
+    </body>
+</html>
