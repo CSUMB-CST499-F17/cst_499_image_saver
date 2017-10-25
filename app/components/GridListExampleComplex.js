@@ -4,7 +4,7 @@ import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 
-var background = chrome.extension.getBackgroundPage();
+//var background = chrome.extension.getBackgroundPage();
 
 const styles = {
   root: {
@@ -21,61 +21,61 @@ const styles = {
 
 const tilesData = [//push more images
   {
-    img: background.resultImgs[0],
+    //img: background.resultImgs[0],
     //img: 'https://i.redd.it/d3zti26pnmqz.jpg',
     featured: false,
   },
   {
-    img: background.resultImgs[1],
+    //img: background.resultImgs[1],
   },
   {
-    img: background.resultImgs[2],
+   // img: background.resultImgs[2],
   },
   {
-    img: background.resultImgs[3],
+   // img: background.resultImgs[3],
     featured: false,//This means that the image is going to be larger than others
   },
   {
-    img: background.resultImgs[4],
+   // img: background.resultImgs[4],
   },
   {
-    img: background.resultImgs[5],
+   // img: background.resultImgs[5],
   },
   {
-    img: background.resultImgs[6],
+   // img: background.resultImgs[6],
   },
   {
-    img: background.resultImgs[7],
+   // img: background.resultImgs[7],
   },
     {
-    img: background.resultImgs[8],
+   // img: background.resultImgs[8],
   },
     {
-    img: background.resultImgs[9],
+   // img: background.resultImgs[9],
   },
     {
-    img: background.resultImgs[10],
+   // img: background.resultImgs[10],
   },
     {
-    img: background.resultImgs[11],
+   // img: background.resultImgs[11],
   },
     {
-    img: background.resultImgs[12],
+   // img: background.resultImgs[12],
   },
     {
-    img: background.resultImgs[13],
+   // img: background.resultImgs[13],
   },
     {
-    img: background.resultImgs[14],
+  //  img: background.resultImgs[14],
   },
     {
-    img: background.resultImgs[15],
+   // img: background.resultImgs[15],
   },
     {
-    img: background.resultImgs[16],
+   // img: background.resultImgs[16],
   },
     {
-    img: background.resultImgs[17],
+   // img: background.resultImgs[17],
   },
   
 ];

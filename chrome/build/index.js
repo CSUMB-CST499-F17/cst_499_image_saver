@@ -6078,9 +6078,9 @@ var _MuiThemeProvider = __webpack_require__(139);
 
 var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 
-var _getMuiTheme2 = __webpack_require__(96);
+var _getMuiTheme = __webpack_require__(96);
 
-var _getMuiTheme3 = _interopRequireDefault(_getMuiTheme2);
+var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
 
 var _AppBar = __webpack_require__(104);
 
@@ -6104,26 +6104,23 @@ __webpack_require__(282);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var muiTheme = (0, _getMuiTheme3.default)(_defineProperty({
-
-    appBar: {
-        backgroundColor: _colors.green500
-    },
-    palette: {
-        primary: _colors.green500
-    }
-}, 'appBar', {
-    height: 150,
-    backgroundColor: _colors.green500
-}));
+var muiTheme = (0, _getMuiTheme2.default)({
+    //   appBar:{
+    //       backgroundColor: green500,
+    //   },
+    // palette: {
+    //   primary: green500,
+    // },
+    // appBar: {
+    //   height: 150,
+    //   backgroundColor: green500
+    // },
+});
 
 var App = function App() {
     return _react2.default.createElement(
         _MuiThemeProvider2.default,
         { muiTheme: muiTheme },
-        _react2.default.createElement(_GridListExampleComplex2.default, null),
         _react2.default.createElement(_Router2.default, null)
     );
 };
@@ -34990,21 +34987,18 @@ var _BluePage = __webpack_require__(275);
 
 var _BluePage2 = _interopRequireDefault(_BluePage);
 
-var _GridListExampleComplex = __webpack_require__(276);
-
-var _GridListExampleComplex2 = _interopRequireDefault(_GridListExampleComplex);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Router = function Router() {
-	var style = {
-		width: "100%",
-		height: "100%",
-		padding: "16px",
-		display: "flex",
-		flexDirection: "column",
-		alignItems: "center"
-	};
+	// const style = {
+	// 	width: "100%", 
+	// 	height: "100%", 
+	// 	padding: "16px",
+	// 	display: "flex",
+	// 	flexDirection: "column",
+	// 	alignItems: "center",
+	// 	justifyContent:"center"
+	// }
 
 	return _react2.default.createElement(
 		_reactRouter.MemoryRouter,
@@ -37533,6 +37527,10 @@ var _FlatButton = __webpack_require__(48);
 
 var _FlatButton2 = _interopRequireDefault(_FlatButton);
 
+var _AppBar = __webpack_require__(104);
+
+var _AppBar2 = _interopRequireDefault(_AppBar);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var WhitePage = function WhitePage(props) {
@@ -37551,11 +37549,7 @@ var WhitePage = function WhitePage(props) {
 	return _react2.default.createElement(
 		'div',
 		{ style: style },
-		_react2.default.createElement(
-			'h1',
-			null,
-			'Page 1'
-		),
+		_react2.default.createElement(_AppBar2.default, { title: 'Panafold' }),
 		_react2.default.createElement(
 			_reactRouterDom.Link,
 			{ to: '/red' },
@@ -38545,6 +38539,11 @@ var _FlatButton2 = _interopRequireDefault(_FlatButton);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var images = Array.from(document.getElementsByTagName('img')).map(function (img) {
+	return img.src;
+});
+console.log(images);
+
 var RedPage = function RedPage(props) {
 	var style = {
 		width: "100%",
@@ -38563,6 +38562,13 @@ var RedPage = function RedPage(props) {
 			'h1',
 			null,
 			'Page 2'
+		),
+		_react2.default.createElement(
+			'div',
+			{ style: { display: "flex", flexWrap: "wrap", overflow: "scroll" } },
+			images.map(function (image, i) {
+				return _react2.default.createElement('img', { key: i, src: image });
+			})
 		),
 		_react2.default.createElement(
 			_reactRouterDom.Link,
@@ -38713,7 +38719,7 @@ var _starBorder2 = _interopRequireDefault(_starBorder);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var background = chrome.extension.getBackgroundPage();
+//var background = chrome.extension.getBackgroundPage();
 
 var styles = {
   root: {
@@ -38730,44 +38736,44 @@ var styles = {
 
 var tilesData = [//push more images
 {
-  img: background.resultImgs[0],
+  //img: background.resultImgs[0],
   //img: 'https://i.redd.it/d3zti26pnmqz.jpg',
   featured: false
 }, {
-  img: background.resultImgs[1]
+  //img: background.resultImgs[1],
 }, {
-  img: background.resultImgs[2]
+  // img: background.resultImgs[2],
 }, {
-  img: background.resultImgs[3],
+  // img: background.resultImgs[3],
   featured: false //This means that the image is going to be larger than others
 }, {
-  img: background.resultImgs[4]
+  // img: background.resultImgs[4],
 }, {
-  img: background.resultImgs[5]
+  // img: background.resultImgs[5],
 }, {
-  img: background.resultImgs[6]
+  // img: background.resultImgs[6],
 }, {
-  img: background.resultImgs[7]
+  // img: background.resultImgs[7],
 }, {
-  img: background.resultImgs[8]
+  // img: background.resultImgs[8],
 }, {
-  img: background.resultImgs[9]
+  // img: background.resultImgs[9],
 }, {
-  img: background.resultImgs[10]
+  // img: background.resultImgs[10],
 }, {
-  img: background.resultImgs[11]
+  // img: background.resultImgs[11],
 }, {
-  img: background.resultImgs[12]
+  // img: background.resultImgs[12],
 }, {
-  img: background.resultImgs[13]
+  // img: background.resultImgs[13],
 }, {
-  img: background.resultImgs[14]
+  //  img: background.resultImgs[14],
 }, {
-  img: background.resultImgs[15]
+  // img: background.resultImgs[15],
 }, {
-  img: background.resultImgs[16]
+  // img: background.resultImgs[16],
 }, {
-  img: background.resultImgs[17]
+  // img: background.resultImgs[17],
 }];
 
 //My array that I am going to populate with a flippin array :P
