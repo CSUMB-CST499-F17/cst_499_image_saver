@@ -1,17 +1,3 @@
-//Attempt 4 Acceptance criteria
-/*chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    console.log(sender.tab ?
-                "from a content script:" + sender.tab.url :
-                "from the extension");
-    if (request.greeting == "hello")
-      sendResponse({farewell: "goodbye"});
-  });
-  */
-//End of attempt 4 acceptance criteria
-
-//Beggining of the rework of attempt 4 in order to get the array passed here and accessible by gridlist
-
 var resultImgs = [];
 
 chrome.runtime.onMessage.addListener(
@@ -27,4 +13,31 @@ chrome.runtime.onMessage.addListener(
     sendResponse({farewell:resultImgs[2]});
   });
   
-//End of rework
+//Used to call HTML overlay Jorge
+chrome.browserAction.onClicked.addListener(function(tab) {
+    
+    chrome.tabs.insertCSS({
+        file:"build/bundle.css"
+    });
+
+    chrome.tabs.executeScript({
+        code: `
+            const div = document.createElement('div');
+            div.setAttribute("id", "root");
+            document.body.appendChild(div);
+        `
+    });
+    
+    chrome.tabs.executeScript({//I just commented out this part
+        file: "content.js"
+    });
+    
+    chrome.tabs.executeScript({//I just commented out this part
+        file: "background.js"
+    });
+    
+    chrome.tabs.executeScript({//I just commented out this part
+        file: "build/index.js"
+    });
+    
+});

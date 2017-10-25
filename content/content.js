@@ -1,3 +1,4 @@
+
 var imgs = Array.prototype.slice.apply(document.getElementsByTagName('img')),
     resultImgs = [];
 for (var i = 0; i < imgs.length; i++) {//Iterates through the images found on the page
@@ -10,14 +11,16 @@ for (var i = 0; i < imgs.length; i++) {//Iterates through the images found on th
             console.log('Small Image: ' + imgs[i].width + "x" +imgs[i].height);
         }
 }
-/*
-function toggleDiv(){
-  console.log("testing the toggle div for the button click");
-    document.getElementById("myDivId").style.visibility = "hidden";
-}
 
-//test.js
-//end of test.js
+function toggleDiv( ){
+    //div.style.display = div.style.display == "none" ? "block" : "none";
+    if( document.getElementById("div").style.visibility == "hidden"){
+         document.getElementById("div").style.visibility = "visible";
+    }
+    else{
+    document.getElementById("div").style.visibility = "hidden";
+    }
+}
 
 document.documentElement.style.height = '100%';
 document.body.style.height = '100%';
@@ -41,7 +44,7 @@ div.style.left = '0%';
 div.style.width = '100%';   
 div.style.height = '100%';
 div.style.backgroundColor = 'red';
-div.style.visibility = 'visible';
+//div.style.visibility = 'hidden';
 //Check to see if the div is visible, if it is, hide it on button click
 //set attributes for btnForm
 btnForm.action = '';
@@ -54,7 +57,7 @@ btn.style.position = 'absolute';
 btn.style.top = '50%';
 btn.style.left = '50%';
 
-btn.onClick = toggleDiv();
+btn.onclick = toggleDiv();
     
 
 //document.getElementById('myDivId').style.visibility = 'hidden';
@@ -69,6 +72,3 @@ btn.onClick = toggleDiv();
 chrome.runtime.sendMessage({imagesURL: resultImgs}, function(response) {
   console.log(response.farewell);
 });
-
-//End of rework of attempt 4
-

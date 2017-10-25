@@ -7,10 +7,12 @@ import {green500} from 'material-ui/styles/colors';
 
 
 import Home from './components/Home';
+import Router from './components/Router';
 import GridListExampleComplex from './components/GridListExampleComplex';
 import './index.css';
 
-const muiTheme = getMuiTheme({//Not really sure that I'm changing anything here
+const muiTheme = getMuiTheme({
+    
     appBar:{
         backgroundColor: green500,
     },
@@ -18,23 +20,20 @@ const muiTheme = getMuiTheme({//Not really sure that I'm changing anything here
     primary: green500,
   },
   appBar: {
-    height:50,
-    //backgroundColor: green500,
-    position: 'fixed'
+    height: 150,
+    backgroundColor: green500
   },
 });
 
-
-
-const App = () => {//Change me so that not all of the components are being called at once all the time
-console.log("Testing a print from inside of the return in index.")
+const App = () => {
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
-            <h1><Home/></h1>
-            <h2><GridListExampleComplex/></h2>
+            <GridListExampleComplex/>
+            <Router/>
         </MuiThemeProvider>
     )
 }
+console.log("hello react!!!!!")
 
 ReactDOM.render(
   <App/>,

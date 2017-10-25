@@ -3,23 +3,29 @@
   "description": "",
   "version": "2.0",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "background"
   ],
   
   "content_scripts" : [
   {
-      "js": ["jquery-3.2.1.min.js", "content.js"],
+
+      "js": ["jquery-3.2.1.min.js", 
+              "content.js"],
       "matches": ["<all_urls>"]
+      //"run _at": "DOMContentLoaded"
   }],
   
   "browser_action": {
-      "default_icon": "icon.png",
-      "default_popup": "build/index.html"
+      "default_icon": "icon.png"
+      /*"default_popup": "build/index.html"//This bit was removed because having the html there disables the onclick event*/
   },
   
   "background": {
-      "scripts": ["background.js"]
+      "scripts": ["background.js"],
+      "persistent": false
   },
  
   "manifest_version": 2
 }
+

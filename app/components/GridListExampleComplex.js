@@ -19,11 +19,11 @@ const styles = {
   },
 };
 
-const tilesData = [
+const tilesData = [//push more images
   {
     img: background.resultImgs[0],
     //img: 'https://i.redd.it/d3zti26pnmqz.jpg',
-    featured: true,
+    featured: false,
   },
   {
     img: background.resultImgs[1],
@@ -98,7 +98,7 @@ const GridListExampleComplex = () => (
     <GridList
       cols={2}
       cellHeight={200}
-      padding={5}
+      padding={10}
       style={styles.gridList}
     >
       {tilesData.map((tile) => (
