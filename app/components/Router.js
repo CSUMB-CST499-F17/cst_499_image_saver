@@ -7,14 +7,15 @@ import GreenPage from './GreenPage';
 import BluePage from './BluePage';
 
 const Router = () => {
-	const style = {
-		width: "100%", 
-		height: "100%", 
-		padding: "16px",
-		display: "flex",
-		flexDirection: "column",
-		alignItems: "center"
-	}
+	// const style = {
+	// 	width: "100%", 
+	// 	height: "100%", 
+	// 	padding: "16px",
+	// 	display: "flex",
+	// 	flexDirection: "column",
+	// 	alignItems: "center",
+	// 	justifyContent:"center"
+	// }
 	
 	return (
 		<MemoryRouter initialEntries={['/']}  initialIndex={0}>

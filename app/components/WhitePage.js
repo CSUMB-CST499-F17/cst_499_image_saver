@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
+import AppBar from 'material-ui/AppBar';
 
 const WhitePage = (props) => {
 	const style = {
@@ -18,7 +19,7 @@ const WhitePage = (props) => {
 	
 	return (
 		<div style={style}>
-			<h1>Page 1</h1>
+			<AppBar title="Panafold" />
 			<Link to="/red">
 				<RaisedButton label="red" backgroundColor="red"/>
 			</Link>

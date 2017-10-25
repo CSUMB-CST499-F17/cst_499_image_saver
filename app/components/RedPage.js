@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 
+const images = Array
+				.from(document.getElementsByTagName('img'))
+				.map(img => img.src)
+console.log(images);
+
+
 const RedPage = (props) => {
 	const style = {
 		width: "100%", 
@@ -17,6 +23,11 @@ const RedPage = (props) => {
 	return (
 		<div style={style}>
 			<h1>Page 2</h1>
+			<div style={{display: "flex", flexWrap:"wrap", overflow:"scroll"}}>
+				{
+					images.map((image,i) => <img key={i} src={image}/>)
+				}
+			</div>
 			<Link to="/">
 				<RaisedButton label="white"/>
 			</Link>

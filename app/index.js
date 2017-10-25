@@ -12,16 +12,16 @@ import GridListExampleComplex from './components/GridListExampleComplex';
 import './index.css';
 
 const muiTheme = getMuiTheme({
-    appBar:{
-        backgroundColor: green500,
-    },
-  palette: {
-    primary: green500,
-  },
-  appBar: {
-    height: 150,
-    backgroundColor: green500
-  },
+  //   appBar:{
+  //       backgroundColor: green500,
+  //   },
+  // palette: {
+  //   primary: green500,
+  // },
+  // appBar: {
+  //   height: 150,
+  //   backgroundColor: green500
+  // },
 });
 
 const App = () => {
