@@ -6121,8 +6121,9 @@ var App = function App() {
     return _react2.default.createElement(
         _MuiThemeProvider2.default,
         { muiTheme: muiTheme },
-        _react2.default.createElement(_Router2.default, null)
-    );
+        _react2.default.createElement(_Home2.default, null),
+        _react2.default.createElement(_GridListExampleComplex2.default, null)
+    ); //Removed <Router/> from inside of the muithemeprovider.
 };
 console.log("hello react!!!!!");
 
@@ -34936,13 +34937,15 @@ var Home = function (_React$Component) {
 			var style = {
 				display: "flex",
 				flexDirection: "column",
-				alignItems: "center"
+				alignItems: "center",
+				zIndex: 2147483648,
+				width: "100%"
 			};
 
 			return _react2.default.createElement(
 				'div',
 				{ style: style },
-				_react2.default.createElement(_AppBar2.default, { title: 'Panafold' })
+				_react2.default.createElement(_AppBar2.default, { title: 'Panafold Muthaflippin Appbar' })
 			);
 		}
 	}]);
@@ -34987,6 +34990,10 @@ var _BluePage = __webpack_require__(275);
 
 var _BluePage2 = _interopRequireDefault(_BluePage);
 
+var _Home = __webpack_require__(246);
+
+var _Home2 = _interopRequireDefault(_Home);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Router = function Router() {
@@ -35007,7 +35014,7 @@ var Router = function Router() {
 			_reactRouterDom.Switch,
 			null,
 			_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _WhitePage2.default }),
-			_react2.default.createElement(_reactRouterDom.Route, { path: '/red', component: _RedPage2.default }),
+			_react2.default.createElement(_reactRouterDom.Route, { path: '/red', component: (_Home2.default, _RedPage2.default) }),
 			_react2.default.createElement(_reactRouterDom.Route, { path: '/green', component: _GreenPage2.default }),
 			_react2.default.createElement(_reactRouterDom.Route, { path: '/blue', component: _BluePage2.default })
 		)
@@ -38537,12 +38544,15 @@ var _FlatButton = __webpack_require__(48);
 
 var _FlatButton2 = _interopRequireDefault(_FlatButton);
 
+var _GridList = __webpack_require__(277);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var images = Array.from(document.getElementsByTagName('img')).map(function (img) {
 	return img.src;
 });
-console.log(images);
+//console.log(images);
+
 
 var RedPage = function RedPage(props) {
 	var style = {
@@ -38552,7 +38562,8 @@ var RedPage = function RedPage(props) {
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
-		backgroundColor: "red"
+		zIndex: 2147483647,
+		backgroundColor: "#222e2e"
 	};
 
 	return _react2.default.createElement(
@@ -38720,12 +38731,17 @@ var _starBorder2 = _interopRequireDefault(_starBorder);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //var background = chrome.extension.getBackgroundPage();
-
+var background = Array.from(document.getElementsByTagName('img')).map(function (img) {
+  return img.src;
+});
 var styles = {
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    width: "100%",
+    height: "100%",
+    background: "#222e2e"
   },
   gridList: {
     width: window.width,
@@ -38734,47 +38750,65 @@ var styles = {
   }
 };
 
-var tilesData = [//push more images
+var tilesData = [
+//background.map((image,i) => <img key={i} src={image}/>)
+//push more images
+
 {
-  //img: background.resultImgs[0],
+  img: background[15],
   //img: 'https://i.redd.it/d3zti26pnmqz.jpg',
   featured: false
 }, {
-  //img: background.resultImgs[1],
+  img: background[1]
 }, {
-  // img: background.resultImgs[2],
+  img: background[2]
 }, {
-  // img: background.resultImgs[3],
+  img: background[3],
   featured: false //This means that the image is going to be larger than others
 }, {
-  // img: background.resultImgs[4],
+  img: background[4]
 }, {
-  // img: background.resultImgs[5],
+  img: background[5]
 }, {
-  // img: background.resultImgs[6],
+  img: background[6]
 }, {
-  // img: background.resultImgs[7],
+  img: background[7]
 }, {
-  // img: background.resultImgs[8],
+  img: background[8]
 }, {
-  // img: background.resultImgs[9],
+  img: background[9]
 }, {
-  // img: background.resultImgs[10],
+  img: background[10]
 }, {
-  // img: background.resultImgs[11],
+  img: background[11]
 }, {
-  // img: background.resultImgs[12],
+  img: background[12]
 }, {
-  // img: background.resultImgs[13],
+  img: background[13]
 }, {
-  //  img: background.resultImgs[14],
+  img: background[14]
 }, {
-  // img: background.resultImgs[15],
+  img: background[15]
 }, {
-  // img: background.resultImgs[16],
+  img: background[16]
 }, {
-  // img: background.resultImgs[17],
+  img: background[17]
 }];
+for (i = 18; i < background.length && i < 100; i++) {
+  var skip = false;
+  //const temp = {img: background[i], featured: false};
+  for (j = 0; j < tilesData.length; j++) {
+    if (tilesData[j].img == background[i]) {
+      skip = true;
+      break;
+    }
+  }
+  if (skip == false) {
+    var temp = { img: background[i], featured: false };
+    tilesData.push(temp);
+  } //Just added junk to this maybe remove
+
+}
 
 //My array that I am going to populate with a flippin array :P
 /*
@@ -38794,9 +38828,9 @@ var GridListExampleComplex = function GridListExampleComplex() {
     _react2.default.createElement(
       _GridList.GridList,
       {
-        cols: 2,
+        cols: 8,
         cellHeight: 200,
-        padding: 10,
+        padding: 3,
         style: styles.gridList
       },
       tilesData.map(function (tile) {
@@ -38813,8 +38847,8 @@ var GridListExampleComplex = function GridListExampleComplex() {
             actionPosition: 'left',
             titlePosition: 'top',
             titleBackground: 'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)',
-            cols: tile.featured ? 2 : 1,
-            rows: tile.featured ? 2 : 1
+            cols: tile.featured ? 8 : 1,
+            rows: tile.featured ? 50 : 1
           },
           _react2.default.createElement('img', { src: tile.img })
         );

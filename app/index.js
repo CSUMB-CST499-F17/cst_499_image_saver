@@ -27,9 +27,11 @@ const muiTheme = getMuiTheme({
 const App = () => {
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
-            <Router/>
+            <Home/>
+            <GridListExampleComplex/>
         </MuiThemeProvider>
-    )
+    )//Removed <Router/> from inside of the muithemeprovider.
+    
 }
 console.log("hello react!!!!!")
 

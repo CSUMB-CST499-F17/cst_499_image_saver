@@ -5,6 +5,7 @@ import WhitePage from './WhitePage';
 import RedPage from './RedPage';
 import GreenPage from './GreenPage';
 import BluePage from './BluePage';
+import Home from './Home';
 
 const Router = () => {
 	// const style = {
@@ -21,7 +22,7 @@ const Router = () => {
 		<MemoryRouter initialEntries={['/']}  initialIndex={0}>
 			<Switch>
 				<Route exact path="/" component={WhitePage}/>
-				<Route path="/red" component={RedPage}/>
+				<Route path="/red" component={Home,RedPage}/>
 				<Route path="/green" component={GreenPage}/>
 				<Route path="/blue" component={BluePage}/>
 			</Switch>

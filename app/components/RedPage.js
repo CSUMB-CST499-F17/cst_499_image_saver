@@ -2,12 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
+import {GridList, GridTile} from 'material-ui/GridList';
 
-
-const images = Array
-				.from(document.getElementsByTagName('img'))
-				.map(img => img.src)
-console.log(images);
+const images = Array.from(document.getElementsByTagName('img')).map(img => img.src);
+//console.log(images);
 
 
 const RedPage = (props) => {
@@ -18,10 +16,12 @@ const RedPage = (props) => {
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
-		backgroundColor: "red"
+		zIndex: 2147483647,
+		backgroundColor: "#222e2e"
 	}
 	
 	return (
+		
 		<div style={style}>
 			<h1>Page 2</h1>
 			<div style={{display: "flex", flexWrap:"wrap", overflow:"scroll"}}>

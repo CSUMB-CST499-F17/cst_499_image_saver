@@ -5,12 +5,15 @@ import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 
 //var background = chrome.extension.getBackgroundPage();
-
+const background = Array.from(document.getElementsByTagName('img')).map(img => img.src);
 const styles = {
   root: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    width: "100%",
+    height: "100%",
+    background: "#222e2e",
   },
   gridList: {
     width: window.width,
@@ -19,66 +22,86 @@ const styles = {
   },
 };
 
-const tilesData = [//push more images
+const tilesData = [
+  //background.map((image,i) => <img key={i} src={image}/>)
+  //push more images
+
   {
-    //img: background.resultImgs[0],
+    img: background[15],
     //img: 'https://i.redd.it/d3zti26pnmqz.jpg',
     featured: false,
   },
+  
   {
-    //img: background.resultImgs[1],
+img: background[1],
   },
   {
-   // img: background.resultImgs[2],
+img: background[2],
   },
   {
-   // img: background.resultImgs[3],
+img: background[3],
     featured: false,//This means that the image is going to be larger than others
   },
   {
-   // img: background.resultImgs[4],
+img: background[4],
   },
   {
-   // img: background.resultImgs[5],
+    img: background[5],
   },
   {
-   // img: background.resultImgs[6],
+    img: background[6],
   },
   {
-   // img: background.resultImgs[7],
+    img: background[7],
   },
     {
-   // img: background.resultImgs[8],
+    img: background[8],
   },
     {
-   // img: background.resultImgs[9],
+    img: background[9],
   },
     {
-   // img: background.resultImgs[10],
+    img: background[10],
   },
     {
-   // img: background.resultImgs[11],
+    img: background[11],
   },
     {
-   // img: background.resultImgs[12],
+    img: background[12],
   },
     {
-   // img: background.resultImgs[13],
+    img: background[13],
   },
     {
-  //  img: background.resultImgs[14],
+    img: background[14],
   },
     {
-   // img: background.resultImgs[15],
+    img: background[15],
   },
     {
-   // img: background.resultImgs[16],
+    img: background[16],
   },
     {
-   // img: background.resultImgs[17],
+    img: background[17],
   },
   
 ];
+for(i = 18; i < background.length && i < 100; i++){
+  var skip = false;
+  //const temp = {img: background[i], featured: false};
+  for(j = 0; j < tilesData.length; j++){
+    if(tilesData[j].img == background[i]){
+      skip = true;
+      break;
+    }
+  }
+  if(skip == false){
+  const temp = {img: background[i], featured: false};
+    tilesData.push(temp);
+  }//Just added junk to this maybe remove
+
+
+}
 
 
 
@@ -96,9 +119,9 @@ for(i = 0; i <background.resultImgs.length;i++){
 const GridListExampleComplex = () => (
   <div style={styles.root}>
     <GridList
-      cols={2}
+      cols={8}
       cellHeight={200}
-      padding={10}
+      padding={3}
       style={styles.gridList}
     >
       {tilesData.map((tile) => (
@@ -109,8 +132,8 @@ const GridListExampleComplex = () => (
           actionPosition="left"
           titlePosition="top"
           titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-          cols={tile.featured ? 2 : 1}
-          rows={tile.featured ? 2 : 1}
+          cols={tile.featured ? 8 : 1}
+          rows={tile.featured ? 50 : 1}
         >
           <img src={tile.img} />
         </GridTile>

@@ -8,11 +8,13 @@ class Home extends React.Component {
 			display: "flex",
 			flexDirection: "column",
 			alignItems: "center",
+			zIndex: 2147483648,
+			width: "100%",
 		};
 		
 		return (
 			<div style={style}>
-				<AppBar title="Panafold"/>
+				<AppBar title="Panafold Muthaflippin Appbar"/>
 			</div>
 		)
 	}
