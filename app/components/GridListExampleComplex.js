@@ -86,10 +86,9 @@ img: background[4],
   },
   
 ];
-for(i = 18; i < background.length && i < 100; i++){
+for(var i = 18; i < background.length && i < 100; i++){
   var skip = false;
-  //const temp = {img: background[i], featured: false};
-  for(j = 0; j < tilesData.length; j++){
+  for(var j = 0; j < tilesData.length; j++){
     if(tilesData[j].img == background[i]){
       skip = true;
       break;
@@ -98,8 +97,7 @@ for(i = 18; i < background.length && i < 100; i++){
   if(skip == false){
   const temp = {img: background[i], featured: false};
     tilesData.push(temp);
-  }//Just added junk to this maybe remove
-
+  }
 
 }
 
