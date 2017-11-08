@@ -4,6 +4,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import {GridList, GridTile} from 'material-ui/GridList';
 
+import Home from './Home';
+import GridListExampleComplex from './GridListExampleComplex';
+
+
 const images = Array.from(document.getElementsByTagName('img')).map(img => img.src);
 //console.log(images);
 
@@ -22,16 +26,9 @@ const RedPage = (props) => {
 	
 	return (
 		
-		<div style={style}>
-			<h1>Page 2</h1>
-			<div style={{display: "flex", flexWrap:"wrap", overflow:"scroll"}}>
-				{
-					images.map((image,i) => <img key={i} src={image}/>)
-				}
-			</div>
-			<Link to="/">
-				<RaisedButton label="white"/>
-			</Link>
+		<div style={{display: "flex", flexWrap:"wrap", overflow:"auto"}}>
+			<Home/>
+			<GridListExampleComplex />
 		</div>
 	)
 }
