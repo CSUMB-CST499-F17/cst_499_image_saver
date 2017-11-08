@@ -6,8 +6,8 @@ import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import RaisedButton from 'material-ui/RaisedButton';
 import {fullWhite} from 'material-ui/styles/colors';
 import FontIcon from 'material-ui/FontIcon';
-
-
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 
 //var background = chrome.extension.getBackgroundPage();
 const background = Array.from(document.getElementsByTagName('img')).map(img => img.src);
@@ -27,11 +27,7 @@ const styles = {
     border: 'white',
   },
   
-  img:{
-    
-  },
-  
-  margin:12,
+
 };
 
 const tilesData = [
@@ -150,25 +146,31 @@ const GridListExampleComplex = () => (
         <GridTile
           key={tile.img}
           title={tile.title}
-          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+          //actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
           actionPosition="left"
           titlePosition="top"
           titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
           cols={tile.featured ? 5 : 1}
           rows={tile.featured ? 50 : 1}
           
+        > 
+        <Card> 
+        <CardMedia
+         //overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
         >
-         
-         <RaisedButton
+        <img src={tile.img} />
+        </CardMedia>
+        
+        <CardActions>
+        <FlatButton
           href = {tile.img}
           label="Save"
-          target="_blank"
-          backgroundColor="#3949AB"
-          style={styles}
+          //textColor="#3949AB"
+          style={styles} />
           
-          
-    />
-          <img src={tile.img} />
+        </CardActions> 
+        
+        </Card>
         </GridTile>
       ))}
     </GridList>

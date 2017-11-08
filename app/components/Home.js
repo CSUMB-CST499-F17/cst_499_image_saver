@@ -3,6 +3,7 @@ import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class Home extends React.Component {
 	
@@ -23,6 +24,12 @@ class Home extends React.Component {
         location.reload();
         
         }
+        
+        function handleTouchTap2() {
+        //alert('onClick triggered on the title component');
+        window.location.href = "https://panafold.co/"
+        
+        }
         const styles = {
         title: {
         cursor: 'pointer',
@@ -35,10 +42,10 @@ class Home extends React.Component {
 			<div style={style} >
 			<AppBar
     		title={<span style={styles.title}>Panafold</span>}
-    		
-    		iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-    		iconElementRight={<FlatButton label="CLOSE" />}
+    		onTitleTouchTap={handleTouchTap2}
+    		iconElementRight={<RaisedButton label="CLOSE" />}
     		onRightIconButtonTouchTap={handleTouchTap}
+    	
 			/>
 			</div>
 		)
