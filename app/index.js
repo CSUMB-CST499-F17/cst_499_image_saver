@@ -9,6 +9,7 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import Home from './components/Home';
 import Router from './components/Router';
 import GridListExampleComplex from './components/GridListExampleComplex';
+import Detect from './components/Detect';
 import './index.css';
 
 const muiTheme = getMuiTheme({
@@ -28,6 +29,7 @@ const App = () => {
     return (
         <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
             <Home/>
+            <Detect/>
             <GridListExampleComplex/>
         </MuiThemeProvider>
     )//Removed <Router/> from inside of the muithemeprovider.
