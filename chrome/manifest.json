@@ -10,15 +10,12 @@
   "content_scripts" : [
   {
 
-      "js": ["jquery-3.2.1.min.js", 
-              "content.js"],
+      "js": ["content.js"],
       "matches": ["<all_urls>"]
-      //"run _at": "DOMContentLoaded"
   }],
   
   "browser_action": {
       "default_icon": "icon.png"
-      /*"default_popup": "build/index.html"//This bit was removed because having the html there disables the onclick event*/
   },
   
   "background": {

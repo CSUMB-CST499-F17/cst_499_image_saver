@@ -11,6 +11,9 @@ import Router from './components/Router';
 import GridListExampleComplex from './components/GridListExampleComplex';
 import './index.css';
 
+
+import Grid from './components/Grid';
+
 const muiTheme = getMuiTheme({
      //appBar:{
        //backgroundColor: "#3F51B5",
@@ -24,16 +27,21 @@ const muiTheme = getMuiTheme({
   // },
 });
 
+document.body.onclick = (ev) => {
+    ev.preventDefault()
+        const tag = document.elementFromPoint(ev.x,ev.y)
+        console.log(tag)
+    }
+
+
 const App = () => {
     return (
         <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-            <Home/>
-            <GridListExampleComplex/>
+            <Grid />
         </MuiThemeProvider>
     )//Removed <Router/> from inside of the muithemeprovider.
     
 }
-console.log("hello react!!!!!")
 
 ReactDOM.render(
   <App/>,
