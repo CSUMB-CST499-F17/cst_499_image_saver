@@ -13,6 +13,7 @@
   "dependencies": {
     "autoprefixer": "^7.1.5",
     "material-ui": "^0.19.3",
+    "material-ui-image": "^2.1.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",

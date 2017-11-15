@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
-import {green500} from 'material-ui/styles/colors';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import * as Colors from 'material-ui/styles/colors';
 
 import Home from './components/Home';
 import Router from './components/Router';
@@ -13,24 +12,27 @@ import './index.css';
 
 const muiTheme = getMuiTheme({
      //appBar:{
-       //backgroundColor: "#3F51B5",
+      //   backgroundColor: Colors.pink100,
      //},
    //palette: {
-    // primary: green500,
-   //},
-   //appBar: {
-    //height: 150,
-    // backgroundColor: green500
+   // textColor: Colors.darkBlack,
+   // primary1Color: Colors.white,
+   // primary2Color: Colors.indigo700,
+   // accent1Color: Colors.redA200,
+   // pickerHeaderColor: Colors.darkBlack,
   // },
+   appBar: {
+     height: 50,
+     //backgroundColor: Colors.pink100,
+   },
 });
 
 const App = () => {
     return (
-        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-            <Home/>
-            <GridListExampleComplex/>
+        <MuiThemeProvider muiTheme={muiTheme}>
+            <Router/>
         </MuiThemeProvider>
-    )//Removed <Router/> from inside of the muithemeprovider.
+    )//Removed <Router/> from inside of the muithemeprovider.Also removed --> <GridListExampleComplex/>
     
 }
 console.log("hello react!!!!!")

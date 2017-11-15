@@ -7,6 +7,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {fullWhite} from 'material-ui/styles/colors';
 import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
+import FlatButton from 'material-ui/FlatButton';
+import Image from 'material-ui-image'
 
 
 import Home from './Home';
@@ -21,11 +23,13 @@ const styles = {
     justifyContent: 'space-around',
     width: '100%',
     height: '100%',
+    backgroundColor: '#766F6F',
+    
     //alignItems: 'stretch',
     //resizeMode: 'stretch',
     //width: "100%",
     //height: "100%",
-    backgroundColor: "#000000",
+    
   },
   gridList: {
     width: window.width,
@@ -41,23 +45,21 @@ const styles = {
     border: 'black',
     resizeMode: 'contain',
     margin: 10,
+    //alignSelf: 'center',
+    //alignItems: 'cemter',
+    //alignContent: 'center',
+    //display: 'flex',
+    //flex: 1,
     textAlign: 'center',
     display: 'inline-block',
-    backgroundColor: "#2c2e30",
+    ///position: 'absolute',
   },
   
-  gridcard:{
-    maxWidth: '90%',
-    maxHeight: '90%',
-    border: 'black',
-    resizeMode: 'contain',
-    margin: 10,
-    textAlign: 'center',
-    display: 'inline-block',
-    backgroundColor: "#fcf2c9",
+  button: {
+   backgroundColor: '#000000',
   }
   
- 
+
 };
 
 function handleTouchTap() {
@@ -123,15 +125,24 @@ const GridListExampleComplex = () => (
           titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
           cols={tile.featured ? 1 : 1}
           rows={tile.featured ? 1 : 1}
-          onTitleTouchTap={handleTouchTap}
+          onTouchTap={handleTouchTap}
         >
-          <Paper style={styles.gridcard} 
+          <Paper style={styles.gridTile} 
             zDepth={2} 
             img={tile.img}
             backgroundColor='#4286f4'
+             
           >
             <img style={styles.gridTile} src={tile.img} />
+          
+          <FlatButton
+          href = {tile.img}
+          label="Save"
+          textColor="#3949AB"
+          style={styles.button} />
+            
           </Paper>
+          
         </GridTile>
       ))}
     </GridList>
@@ -139,5 +150,3 @@ const GridListExampleComplex = () => (
 );
 
 export default GridListExampleComplex;
-
-

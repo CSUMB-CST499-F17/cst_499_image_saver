@@ -9,6 +9,11 @@ class Home extends React.Component {
 	
 	render() {
 		const style = {
+			
+			title: {
+			 textColor: "#000000",	
+			},
+			
 			display: "flex",
 			flexDirection: "column",
 			alignItems: "center",
@@ -40,7 +45,7 @@ class Home extends React.Component {
 		
 		return (
 			<div style={style} >
-			<AppBar
+			<AppBar style={{backgroundColor: "#434040"}}
     		title={<span style={styles.title}>Panafold</span>}
     		onTitleTouchTap={handleTouchTap2}
     		iconElementRight={<RaisedButton label="CLOSE" />}
