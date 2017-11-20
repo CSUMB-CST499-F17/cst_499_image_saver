@@ -1,4 +1,3 @@
-console.log("=========================")
 
 // var resultImgs = [];
 // 
@@ -27,32 +26,24 @@ console.log("=========================")
 // 
 // 
 // //Used to call HTML overlay Jorge
-// chrome.browserAction.onClicked.addListener(function(tab) {
-// 
-//     chrome.tabs.insertCSS({
-//         file:"build/bundle.css"
-//     });
-// 
-//     chrome.tabs.executeScript({
-//         code: `
-//             const div = document.createElement('div');
-//             div.setAttribute("id", "root");
-//             document.body.appendChild(div);
-//         `
-//     });
-// 
-//     // 
-//     // chrome.tabs.executeScript({//I just commented out this part
-//     //     file: "background.js"
-//     // });
-// 
-//     chrome.tabs.executeScript({//I just commented out this part
-//         file: "build/index.js"
-//     });
-// 
-// 
-// 
-// });
-// 
-// 
-// 
+chrome.browserAction.onClicked.addListener(function(tab) {
+
+    chrome.tabs.insertCSS({
+        file:"build/bundle.css"
+    });
+
+    chrome.tabs.executeScript({
+        code: `
+            const div = document.createElement('div');
+            div.setAttribute("id", "root");
+            document.body.appendChild(div);
+        `
+    });
+
+    chrome.tabs.executeScript({//I just commented out this part
+        file: "build/index.js"
+    });
+});
+
+
+
