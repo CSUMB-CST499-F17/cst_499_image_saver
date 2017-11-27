@@ -10,7 +10,7 @@
   "content_scripts" : [
   {
 
-      "js": ["content.js"],
+      "js": ["helloworld.js"],
       "matches": ["<all_urls>"]
   }],
   

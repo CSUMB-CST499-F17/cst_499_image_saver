@@ -6,6 +6,7 @@ import RedPage from './RedPage';
 import GreenPage from './GreenPage';
 import BluePage from './BluePage';
 import Home from './Home';
+import GridListExampleComplex from './GridListExampleComplex';
 
 const Router = () => {
 	// const style = {
@@ -22,7 +23,7 @@ const Router = () => {
 		<MemoryRouter initialEntries={['/']}  initialIndex={0}>
 			<Switch>
 				<Route exact path="/" component={WhitePage}/>
-				<Route path="/red" component={Home,RedPage}/>
+				<Route path="/red" component={GridListExampleComplex}/>
 				<Route path="/green" component={GreenPage}/>
 				<Route path="/blue" component={BluePage}/>
 			</Switch>

@@ -16,7 +16,7 @@ class Grid extends React.Component {
 			.from(document.getElementsByTagName('img'))
 			.forEach(img => 
 				img.style.border = "5px solid green"
-			})
+			)
 		return null // return null in order to not render anything
 	}
 	

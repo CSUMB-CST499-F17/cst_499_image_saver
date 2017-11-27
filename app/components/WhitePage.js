@@ -19,7 +19,6 @@ const WhitePage = (props) => {
 	
 	return (
 		<div style={style}>
-			<AppBar title="Panafold" />
 			<Link to="/red">
 				<RaisedButton label="red" backgroundColor="red"/>
 			</Link>

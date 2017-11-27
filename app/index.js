@@ -27,17 +27,17 @@ const muiTheme = getMuiTheme({
   // },
 });
 
-document.body.onclick = (ev) => {
-    ev.preventDefault()
-        const tag = document.elementFromPoint(ev.x,ev.y)
-        console.log(tag)
-    }
+// document.body.onclick = (ev) => {
+//     ev.preventDefault()
+//         const tag = document.elementFromPoint(ev.x,ev.y)
+//         console.log(tag)
+//     }
 
 
 const App = () => {
     return (
         <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-            <Grid />
+            <Router />
         </MuiThemeProvider>
     )//Removed <Router/> from inside of the muithemeprovider.
     
