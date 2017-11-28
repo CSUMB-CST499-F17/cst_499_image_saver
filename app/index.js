@@ -3,39 +3,45 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
-import * as Colors from 'material-ui/styles/colors';
+import {green500} from 'material-ui/styles/colors';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 
 import Home from './components/Home';
 import Router from './components/Router';
 import GridListExampleComplex from './components/GridListExampleComplex';
 import './index.css';
 
+
+//import Grid from './components/Grid';
+
 const muiTheme = getMuiTheme({
      //appBar:{
-      //   backgroundColor: Colors.pink100,
+       //backgroundColor: "#3F51B5",
      //},
    //palette: {
-   // textColor: Colors.darkBlack,
-   // primary1Color: Colors.white,
-   // primary2Color: Colors.indigo700,
-   // accent1Color: Colors.redA200,
-   // pickerHeaderColor: Colors.darkBlack,
+    // primary: green500,
+   //},
+   //appBar: {
+    //height: 150,
+    // backgroundColor: green500
   // },
-   appBar: {
-     height: 50,
-     //backgroundColor: Colors.pink100,
-   },
 });
+
+document.body.onclick = (ev) => {
+    ev.preventDefault()
+        const tag = document.elementFromPoint(ev.x,ev.y)
+        console.log(tag)
+    }
+
 
 const App = () => {
     return (
-        <MuiThemeProvider muiTheme={muiTheme}>
-            <Router/>
+        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+            <Grid />
         </MuiThemeProvider>
-    )//Removed <Router/> from inside of the muithemeprovider.Also removed --> <GridListExampleComplex/>
+    )//Removed <Router/> from inside of the muithemeprovider.
     
 }
-console.log("hello react!!!!!")
 
 ReactDOM.render(
   <App/>,
