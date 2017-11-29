@@ -9,7 +9,7 @@ button.style.width = "50px";
 button.style.height = "50px";
 button.style.position = "absolute";
 button.style.top = "0";
-button.style.right = "0";
+button.style.left = "0";
 button.style["z-index"] = "1101";
 
 document.body.appendChild(button);
@@ -25,7 +25,7 @@ Array.from(document.getElementsByTagName('img'))
         console.log("x %s, y %s", img.x, img.y);
         console.log("=======", img.style.left, img.style.top);
         button.style.top = `${img.y}px`;
-        button.style.right = `${img.x}px`;
+        button.style.left = `${img.x}px`;
         //  button.style.top = img.style.top;
         //  button.style.top = img.style.left;
         // button.x = ev.x;
