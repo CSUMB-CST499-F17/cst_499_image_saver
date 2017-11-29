@@ -6,9 +6,9 @@ import AppBar from 'material-ui/AppBar';
 
 const WhitePage = (props) => {
 	const style = {
-		width: "100%",
+		width: "50%",
 		maxWidth: "800px", 
-		height: "100%", 
+		height: "50%", 
 		margin: "16px",
 		display: "flex",
 		flexDirection: "column",

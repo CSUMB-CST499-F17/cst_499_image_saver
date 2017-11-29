@@ -9,7 +9,7 @@ import BlankPage from './BlankPage';
 import Home from './Home';
 import GridListExampleComplex from './GridListExampleComplex';
 
-const Router = () => {
+const Router = (props) => {
 	 const style = {
 	 	width: "0%", 
 	 	height: "0%", 
@@ -28,7 +28,7 @@ const Router = () => {
 				<Route exact path="/" component={RedPage}/>
 				<Route path="/red" component={null}/>
 				<Route path="/green" component={GreenPage}/>
-				<Route path="/blue" component={BluePage}/>
+				<Route path="/blue/:image" component={BluePage}/>
 				<Route path = "/blank" component={BlankPage}/>
 			</Switch>
 		</MemoryRouter>

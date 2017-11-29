@@ -8,11 +8,10 @@ import {fullWhite} from 'material-ui/styles/colors';
 import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
 import FlatButton from 'material-ui/FlatButton';
-import Image from 'material-ui-image'
+import Image from 'material-ui-image';
 
 
 import Home from './Home';
-
 
 //var background = chrome.extension.getBackgroundPage();
 const background = Array.from(document.getElementsByTagName('img'));//.map(img => img.src);
@@ -54,9 +53,29 @@ const styles = {
     display: 'inline-block',
     ///position: 'absolute',
   },
+  gridImage:{
+    maxWidth: '90%',
+    maxHeight: '90%',
+    border: 'black',
+    resizeMode: 'stretch',
+    //margin: 'auto',
+    marginTop: 20,
+    //alignSelf: 'center',
+    //alignItems: 'cemter',
+    //alignContent: 'center',
+    //display: 'flex',
+    //flex: 1,
+    textAlign: 'center',
+    alignSelf: 'center',
+    alignItems: 'center',
+    display: 'inline-block',
+    justifyContent: 'center',
+    ///position: 'absolute',
+  },
   
   button: {
    backgroundColor: '#000000',
+   alignSelf: 'flex-end',
   }
   
 
@@ -110,7 +129,7 @@ const GridListExampleComplex = () => (
   <div style={styles.root}>
     <GridList
       cols={5}
-      cellHeight={230}
+      cellHeight={330}
       padding={0}
       style={styles.gridList}
     >
@@ -133,14 +152,17 @@ const GridListExampleComplex = () => (
             backgroundColor='#4286f4'
              
           >
-            <img style={styles.gridTile} src={tile.img} />
+            <img style={styles.gridImage} src={tile.img} />
           
+          
+
+          <Link to="/blue/:image" params = {{image: tile.img}}>
           <FlatButton
-          href = {tile.img}
+          //href = {tile.img}
           label="Save"
           textColor="#3949AB"
           style={styles.button} />
-            
+          </Link>
           </Paper>
           
         </GridTile>
