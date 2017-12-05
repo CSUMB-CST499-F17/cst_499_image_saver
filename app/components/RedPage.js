@@ -1,16 +1,18 @@
+//======================================================USER LOGIN================================================================//
+//This page is linked in Router.js and is used to allow the user to login, there will be buttons located on GridListExample and BluePage
+//That bring up this page. 
 import React from 'react';
 import { Link } from 'react-router-dom';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import {GridList, GridTile} from 'material-ui/GridList';
-
 import Home from './Home';
 import GridListExampleComplex from './GridListExampleComplex';
 
 
-const images = Array.from(document.getElementsByTagName('img')).map(img => img.src);
+//Array used to retrieve images on the
+//const images = Array.from(document.getElementsByTagName('img')).map(img => img.src);
 //console.log(images);
-
 
 const RedPage = (props) => {
 	const style = {

@@ -156,7 +156,11 @@ const GridListExampleComplex = () => (
           
           
 
-          <Link to="/blue/:image" params = {{image: tile.img}}>
+          {/*<Link to="/blue/:image" tester = {{image: tile.img}}>*/}
+          
+          <Link to={{ pathname: '/blue/:image', state: { image: tile.img } }}>
+          
+          
           <FlatButton
           //href = {tile.img}
           label="Save"
