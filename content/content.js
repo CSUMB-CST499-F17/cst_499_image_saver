@@ -1,4 +1,3 @@
-
 var imgs = Array.prototype.slice.apply(document.getElementsByTagName('img')),
     resultImgs = [];
 for (var i = 0; i < imgs.length; i++) {//Iterates through the images found on the page

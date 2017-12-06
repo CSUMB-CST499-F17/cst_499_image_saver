@@ -41488,8 +41488,7 @@ var Login = function (_React$Component) {
 
   _createClass(Login, [{
     key: 'handleClick',
-    value: function handleClick(event, data) {
-      var self = this;
+    value: function handleClick(event) {
       var apiBaseUrl = 'http://panafold-backend-staging.us-west-2.elasticbeanstalk.com/';
       var formdata = new FormData();
       var token2 = event;
@@ -41503,15 +41502,11 @@ var Login = function (_React$Component) {
         //this.state.token = response.data.token;
         //token2 = String(response.data.token);
         formdata.append('token', response.data.token);
-        this.setState({ token: formdata.token });
-        console.log(response);
-        console.log(response.data.token);
+
+        //console.log(response);
+        //console.log(response.data.token);
       });
-      this.setState({ token: formdata.token });
-      console.log(this.state.token);
-      console.log(this.state.token);
-      console.log(this.state.token);
-      console.log(this.state.token);
+      console.log(formdata.token);
       //return token;
     }
   }]);
@@ -41524,7 +41519,7 @@ var Login = function (_React$Component) {
     _this.state = {
       username: '',
       password: '',
-      token: 'asfhg'
+      token: ''
     };
     var handleClick = function handleClick(event) {
       console.log('Username: ' + _this.username);
@@ -41569,8 +41564,8 @@ var Login = function (_React$Component) {
             React.createElement(
               _reactRouterDom.Link,
               { to: { pathname: '/:token', state: { token: this.state.token } } },
-              React.createElement(_RaisedButton2.default, { label: 'Submit', primary: true, style: style, onClick: function onClick(event, data) {
-                  return _this2.handleClick(event, data);
+              React.createElement(_RaisedButton2.default, { label: 'Submit', primary: true, style: style, onClick: function onClick(event) {
+                  return _this2.handleClick(event);
                 } })
             )
           )

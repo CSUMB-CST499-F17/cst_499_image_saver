@@ -71,8 +71,7 @@ const styles = {
 
 
 class Login extends React.Component {
-    handleClick(event,data){
-        var self = this;
+    handleClick(event){
             var apiBaseUrl = 'http://panafold-backend-staging.us-west-2.elasticbeanstalk.com/';
             var formdata = new FormData();
             const token2 = event;
@@ -87,16 +86,11 @@ class Login extends React.Component {
             //this.state.token = response.data.token;
             //token2 = String(response.data.token);
             formdata.append('token', response.data.token);
-            this.setState({token: formdata.token});
-            console.log(response);
-            console.log(response.data.token);
             
+            //console.log(response);
+            //console.log(response.data.token);
         })
-         this.setState({token:formdata.token});
-        console.log(this.state.token);
-        console.log(this.state.token);
-        console.log(this.state.token);
-        console.log(this.state.token);
+        console.log(formdata.token);
         //return token;
 
     }
@@ -105,7 +99,7 @@ constructor(props){
   this.state={
   username:'',
   password:'',
-  token: 'asfhg'
+  token: ''
   }
    const handleClick = (event) => {
     console.log('Username: '+ this.username);
@@ -136,7 +130,7 @@ render() {
                />
              <br/>
               <Link to={{ pathname: '/:token', state: { token: this.state.token } }}>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={(event,data) => this.handleClick(event,data)}/>
+             <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
              </Link>
          </div>
          </MuiThemeProvider>
