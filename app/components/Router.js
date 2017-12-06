@@ -24,13 +24,13 @@ const Router = (props) => {
 	 }
 	
 	return (
-		<MemoryRouter initialEntries={['/']}  initialIndex={0}>
+		<MemoryRouter initialEntries={['/:token']}  initialIndex={0}>
 			<Switch>
-				<Route exact path="/" component={RedPage}/>
-				<Route path="/red" component={null}/>
-				<Route path="/Login" component={Login}/>
-				<Route path="/green" component={GreenPage}/>
-				<Route path="/blue/:image" component={BluePage}/>
+				<Route exact path="/:token" component={RedPage}/>
+				<Route path="/red/:token" component={null}/>
+				<Route path="/Login/:token" component={Login}/>
+				<Route path="/green/:token" component={GreenPage}/>
+				<Route path="/blue/:image:token" component={BluePage}/>
 				<Route path = "/blank" component={BlankPage}/>
 			</Switch>
 		</MemoryRouter>

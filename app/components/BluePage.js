@@ -29,7 +29,7 @@ function userlogin(userID, pass){
   });
 }
 
-function createFold(givenTitle, givenUrl, givenImage_url){
+function createFold(givenTitle, givenUrl, givenImage_url,auth_token){
   //var title = givenTitle;
   //var url = givenUrl;
   //var image_url = givenImage_url;
@@ -199,12 +199,17 @@ const handleChange = (event) => {
     
   });
 };
+		function handleTouchTap() {
+        //alert('onClick triggered on the title component');
+        location.reload();
+        
+        }
 
 const BluePage = (props) => {
   console.log(props)
   given_image_url=props.location.state.image;
   console.log(given_image_url);
-  createFold('tester', given_image_url, given_image_url);
+  createFold('tester', given_image_url, given_image_url, props.location.state.token);
   return(
 <div style = {styles.root0}>
   <div style= {styles.root}>
@@ -235,20 +240,19 @@ const BluePage = (props) => {
       />
       
 
-          <Link to="/">
+        
             
             <FlatButton
             
             // Send a POST reques
             //href = {tile.img}
             label="Save"
-            onClick = {
-              {/*()=>userlogin()*/}
+            onClick = {handleTouchTap
             }
             textColor="#FFFFFF"
             style={styles.button} />
-          </Link>
-             <Link to="/Login">
+          
+             <Link to="/Login/:token">
             
             <FlatButton//This is the button for Login
             // Send a POST reques

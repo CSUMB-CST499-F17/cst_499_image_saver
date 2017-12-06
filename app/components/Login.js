@@ -3,9 +3,13 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
-import { Redirect } from 'react-router';
+import { MemoryRouter } from 'react-router';
+import { Route, Switch, Link, Redirect } from 'react-router-dom';
+import BluePage from './BluePage';
+
 
 var React = require('react');
+var token = 'tester';
 const styles = {
 	    root0:{
         backgroundColor: '#766F6F',
@@ -67,35 +71,41 @@ const styles = {
 
 
 class Login extends React.Component {
+    handleClick(event,data){
+        var self = this;
+            var apiBaseUrl = 'http://panafold-backend-staging.us-west-2.elasticbeanstalk.com/';
+            var formdata = new FormData();
+            const token2 = event;
+            formdata.append('username', this.state.username);
+            formdata.append('password', this.state.password);
+            console.log(token);
+            console.log(this.state.token);
+            //this.setState({token: token});
 
-    handleClick(event){
- var apiBaseUrl = 'http://panafold-backend-staging.us-west-2.elasticbeanstalk.com/';
- var formdata = new FormData();
- formdata.append('username', this.state.username);
- formdata.append('password', this.state.password);
- axios.post('users/authenticate', formdata)
-// axios.post('users/authenticate',{
-//    params: {
-//      username: payload.username,
-//      password: payload.password
-//    }
-// })
- .then(function (response) {
- console.log(response);
- })
- 
+            axios.post('users/authenticate', formdata)
+        .then(function (response) {
+            //this.state.token = response.data.token;
+            //token2 = String(response.data.token);
+            formdata.append('token', response.data.token);
+            this.setState({token: formdata.token});
+            console.log(response);
+            console.log(response.data.token);
+            
+        })
+         this.setState({token:formdata.token});
+        console.log(this.state.token);
+        console.log(this.state.token);
+        console.log(this.state.token);
+        console.log(this.state.token);
+        //return token;
+
     }
-
-    
-    // handleClick() {
-    //    console.log('this is:', this.username);
-    //    }
 constructor(props){
   super(props);
   this.state={
   username:'',
   password:'',
-  fireRedirect: false
+  token: 'asfhg'
   }
    const handleClick = (event) => {
     console.log('Username: '+ this.username);
@@ -125,7 +135,9 @@ render() {
                onChange = {(event,newValue) => this.setState({password:newValue})}
                />
              <br/>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+              <Link to={{ pathname: '/:token', state: { token: this.state.token } }}>
+             <RaisedButton label="Submit" primary={true} style={style} onClick={(event,data) => this.handleClick(event,data)}/>
+             </Link>
          </div>
          </MuiThemeProvider>
       </div>
