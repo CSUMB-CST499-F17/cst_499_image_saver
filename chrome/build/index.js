@@ -41427,6 +41427,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+_axios2.default.defaults.headers.common['Authorization'] = 'tester';
+
 var React = __webpack_require__(0);
 var token = 'tester';
 var styles = {
@@ -41502,11 +41504,13 @@ var Login = function (_React$Component) {
         //this.state.token = response.data.token;
         //token2 = String(response.data.token);
         formdata.append('token', response.data.token);
+        _axios2.default.defaults.headers.common.Authorization = response.data.token;
 
         //console.log(response);
         //console.log(response.data.token);
       });
-      console.log(formdata.token);
+      console.log(_axios2.default.defaults.headers.common.Authorization);
+      console.log('End of the token');
       //return token;
     }
   }]);

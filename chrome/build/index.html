@@ -9,3 +9,13 @@
     </div>
   <script type="text/javascript" src="index.js"></script><script type="text/javascript" src="index.js"></script></body>
 </html>
+
+<script>
+var images = document.getElementsByTagName('img');
+//var newimage = document.getElementById('demo');
+for (var i = 0, l = images.length; i < l; i++) {
+  images[i].insertAdjacentHTML('afterend','<button id="btn">Button</button>');
+  //images[i].src = 'http://placekitten.com/' + images[i].width + '/' + images[i].height;
+ 
+}
+</script>

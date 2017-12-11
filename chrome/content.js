@@ -56,13 +56,13 @@ btn.style.left = '50%';
 
 btn.onClick = toggleDiv();
     
-
+*/
 //document.getElementById('myDivId').style.visibility = 'hidden';
 
 //Attempt 4 ---THIS ONE CAN COMMUNICATE WITH THE BACKGROUND SCRIPT  
-/*chrome.runtime.sendMessage({greeting: "hello"}, function(response) {//This sends a message carrying the text hello
+chrome.runtime.sendMessage({greeting: "hello"}, function(response) {//This sends a message carrying the text hello
   console.log(response.farewell);
-});*/
+});
 //End of attempt 4
 
 //An attempt to utilize attempt 4 in a way that will send an array to background.js. Hopefull this array will then be accessible to gridlistexample

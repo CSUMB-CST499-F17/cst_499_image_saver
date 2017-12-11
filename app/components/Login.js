@@ -7,6 +7,7 @@ import { MemoryRouter } from 'react-router';
 import { Route, Switch, Link, Redirect } from 'react-router-dom';
 import BluePage from './BluePage';
 
+axios.defaults.headers.common['Authorization'] = 'tester';
 
 var React = require('react');
 var token = 'tester';
@@ -86,11 +87,13 @@ class Login extends React.Component {
             //this.state.token = response.data.token;
             //token2 = String(response.data.token);
             formdata.append('token', response.data.token);
+            axios.defaults.headers.common.Authorization = response.data.token;
             
             //console.log(response);
             //console.log(response.data.token);
         })
-        console.log(formdata.token);
+        console.log(axios.defaults.headers.common.Authorization);
+        console.log('End of the token');
         //return token;
 
     }
